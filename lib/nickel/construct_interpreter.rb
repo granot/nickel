@@ -17,6 +17,7 @@ module Nickel
     end
 
     def run
+      binding.pry
       if found_dates
         occurrences_from_dates
       elsif found_one_date_span
@@ -244,6 +245,7 @@ module Nickel
     end
 
     def occurrences_from_dates
+      binding.pry
       @dci.each do |dindex|
         occ_base = Occurrence.new(type: :single, start_date: @constructs[dindex].date)
         create_occurrence_for_each_time_in_time_map(occ_base, dindex) { |occ| @occurrences << occ }

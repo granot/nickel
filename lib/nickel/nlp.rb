@@ -23,7 +23,7 @@ module Nickel
       @nlp_query = NLPQuery.new(@query).standardize   # standardizes the query
       @construct_finder = ConstructFinder.new(@nlp_query, @input_date, @input_time)
       @construct_finder.run
-
+binding.pry
       extract_message
       correct_case
 
